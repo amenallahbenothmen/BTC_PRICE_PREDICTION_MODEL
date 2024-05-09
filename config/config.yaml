@@ -1,0 +1,42 @@
+artifacts_root : artifacts
+
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL_Transaction: https://gz.blockchair.com/bitcoin/transactions/
+  source_URL_blocks: https://gz.blockchair.com/bitcoin/blocks/
+  dataset_name : BTC
+
+data_preprocessing:
+  root_dir: artifacts/data_ingestion
+  data_dir: artifacts/data_split
+  data_scaled_dir: artifacts/data_scaled
+  data_final_dir: artifacts/data_final
+  dataset_name: BTC
+  features:
+    - close
+    - volume
+    - ATR
+    - OBV
+    - INT_Rate
+    - Transactions
+    - close_stk
+    - Blocks
+    - inflation
+    - open
+    - EMA
+    - feb_0.5
+    - high
+
+prepare_base_model:
+  root_dir: artifacts/prepare_base_model
+  full_model_path: artifacts/prepare_base_model/full_model.h5
+  shape_path: artifacts/data_final/trainX.npy
+
+training :
+ root_dir: artifacts/training
+ trained_model_path: artifacts/training/model.keras
+  
+
+
+

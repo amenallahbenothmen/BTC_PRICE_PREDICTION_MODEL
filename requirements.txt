@@ -1,0 +1,27 @@
+pandas
+numpy
+yfinance
+matplotlib
+plotly
+requests
+lxml
+pandas_ta
+TA-Lib
+seaborn
+tensorflow
+keras-tuner
+notebook
+dvc
+mlflow
+pyYAML
+tqdm
+ensure
+joblib
+types-PyYAML
+scipy
+Flask
+Flask-Cors
+python-box
+typing
+-e .
+
