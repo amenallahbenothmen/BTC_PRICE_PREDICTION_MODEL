@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/a343425aaed4479299f6707f0b56b9fd/artifacts
+end_time: 1715272800634
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a343425aaed4479299f6707f0b56b9fd
+run_name: silent-cub-383
+run_uuid: a343425aaed4479299f6707f0b56b9fd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715272796090
+status: 3
+tags: []
+user_id: amenm

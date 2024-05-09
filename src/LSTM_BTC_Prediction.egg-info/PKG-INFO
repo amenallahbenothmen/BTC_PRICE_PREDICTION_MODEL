@@ -1,11 +1,12 @@
 Metadata-Version: 2.1
 Name: LSTM-BTC-Prediction
-Version: 0.0.0
+Version: 0.0.1
 Summary: A small python package for LSTM app
-Home-page: https://github.com/amenallahbenothmen/Bitcoin_predection_price
+Home-page: https://github.com/amenallahbenothmen/BTC_PRICE_PREDICTION_MODEL
 Author: amenallahbenothmen
 Author-email: amenallah.benothmen@supcom.tn
-Project-URL: Bug Tracker, https://github.com/amenallahbenothmen/Bitcoin_predection_price/issues
+Project-URL: Bug Tracker, https://github.com/amenallahbenothmen/BTC_PRICE_PREDICTION_MODEL/issues
+Description-Content-Type: text/markdown
 
 # Bitcoin_predection_price
 
