@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from src.LSTM_BTC_Prediction import logger
+from LSTM_BTC_Prediction import logger
 import json
 import joblib
 from ensure import ensure_annotations

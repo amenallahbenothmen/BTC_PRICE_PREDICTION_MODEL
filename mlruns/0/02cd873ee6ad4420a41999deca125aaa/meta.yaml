@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/02cd873ee6ad4420a41999deca125aaa/artifacts
+end_time: 1715274496417
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 02cd873ee6ad4420a41999deca125aaa
+run_name: chill-kit-81
+run_uuid: 02cd873ee6ad4420a41999deca125aaa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715274491133
+status: 3
+tags: []
+user_id: amenm

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/0a8fb4da7ae5455f9504fb5e85024d99/artifacts
+end_time: 1715274220626
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0a8fb4da7ae5455f9504fb5e85024d99
+run_name: gentle-elk-893
+run_uuid: 0a8fb4da7ae5455f9504fb5e85024d99
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715274215023
+status: 3
+tags: []
+user_id: amenm

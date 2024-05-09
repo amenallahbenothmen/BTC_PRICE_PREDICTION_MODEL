@@ -2,6 +2,7 @@ from LSTM_BTC_Prediction import logger
 from LSTM_BTC_Prediction.config.configuration import ConfigurationManager
 from LSTM_BTC_Prediction.components.data_ingestion import DataIngestion
 
+
 STAGE_NAME = "DATA Ingestion stage"
 
 class DataIngestionTrainingPipeline:

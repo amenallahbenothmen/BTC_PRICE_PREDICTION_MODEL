@@ -1,0 +1,182 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 5b7353991c71f94b65e4366fdc3d2193
+      size: 925
+    - path: src/LSTM_BTC_Prediction/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 8ba21ae6e0f3b407810e62248bcffdea
+      size: 1120
+    outs:
+    - path: artifacts/data_ingestion
+      hash: md5
+      md5: ded3d90b9ad5f61a6075c1ebacdbeee5.dir
+      size: 1549106
+      nfiles: 1
+  data_preprocessing:
+    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_02_data_preprocessing.py
+    deps:
+    - path: artifacts/data_ingestion
+      hash: md5
+      md5: ded3d90b9ad5f61a6075c1ebacdbeee5.dir
+      size: 1549106
+      nfiles: 1
+    - path: config/config.yaml
+      hash: md5
+      md5: 5b7353991c71f94b65e4366fdc3d2193
+      size: 925
+    - path: src/LSTM_BTC_Prediction/pipeline/stage_02_data_preprocessing.py
+      hash: md5
+      md5: 113345afaad07dd29374ff8c9203d83f
+      size: 1185
+    params:
+      params.yaml:
+        FORECAST_HORIZON: 1
+        LOOK_BACK: 120
+    outs:
+    - path: artifacts/data_final/testX.npy
+      hash: md5
+      md5: 85cbb815083a0b5be9fcd2222b2876f3
+      size: 7263488
+    - path: artifacts/data_final/testY.npy
+      hash: md5
+      md5: f8f355cbe47cc8d78041be8295a17854
+      size: 4784
+    - path: artifacts/data_final/trainX.npy
+      hash: md5
+      md5: d4576a6347b61fbcb7369298d5b62536
+      size: 24760448
+    - path: artifacts/data_final/trainY.npy
+      hash: md5
+      md5: f03a7b4fee6d26db61024c5c3f43e672
+      size: 16000
+    - path: artifacts/data_final/valX.npy
+      hash: md5
+      md5: fd1aa5aa75ef655bef35b901a7837853
+      size: 7263488
+    - path: artifacts/data_final/valY.npy
+      hash: md5
+      md5: c7bc3696c4a680f4399b3732c9c82337
+      size: 4784
+    - path: artifacts/data_scaled/test_scaled.csv
+      hash: md5
+      md5: 542315c090ad43dbb7692a6da4993fc5
+      size: 176493
+    - path: artifacts/data_scaled/train_scaled.csv
+      hash: md5
+      md5: 5d21997e2ae82c731031accb3a3e561c
+      size: 545176
+    - path: artifacts/data_scaled/val_scaled.csv
+      hash: md5
+      md5: 6752940e757ed7b86f88a927b7f280a6
+      size: 178665
+    - path: artifacts/data_split/test.csv
+      hash: md5
+      md5: 85d84c060bca035fe636ebb32dd9ae2b
+      size: 138792
+    - path: artifacts/data_split/train.csv
+      hash: md5
+      md5: ea4eac96ac3ecdecff58705db012b388
+      size: 425526
+    - path: artifacts/data_split/val.csv
+      hash: md5
+      md5: ae8c98d8adbc232b3bbd249c61046785
+      size: 138598
+  prepare_base_model:
+    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_03_prepare_base_model.py
+    deps:
+    - path: artifacts/data_final/trainX.npy
+      hash: md5
+      md5: d4576a6347b61fbcb7369298d5b62536
+      size: 24760448
+    - path: config/config.yaml
+      hash: md5
+      md5: 5b7353991c71f94b65e4366fdc3d2193
+      size: 925
+    - path: src/LSTM_BTC_Prediction/pipeline/stage_03_prepare_base_model.py
+      hash: md5
+      md5: 99daef6f314a448eef844ba1de159d10
+      size: 980
+    params:
+      params.yaml:
+        DROPOUT_RATE_1: 0.1
+        DROPOUT_RATE_2: 0.1
+        L2_REG_1: 0.001
+        L2_REG_2: 0.001
+        LSTM_UNITS_1: 156
+        LSTM_UNITS_2: 124
+    outs:
+    - path: artifacts/prepare_base_model/full_model.h5
+      hash: md5
+      md5: fd02665227bdb372baa4d7d86e02a1ca
+      size: 2620416
+  model_training:
+    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_04_model_training.py
+    deps:
+    - path: artifacts/data_final/testX.npy
+      hash: md5
+      md5: 85cbb815083a0b5be9fcd2222b2876f3
+      size: 7263488
+    - path: artifacts/data_final/testY.npy
+      hash: md5
+      md5: f8f355cbe47cc8d78041be8295a17854
+      size: 4784
+    - path: artifacts/data_final/trainX.npy
+      hash: md5
+      md5: d4576a6347b61fbcb7369298d5b62536
+      size: 24760448
+    - path: artifacts/data_final/trainY.npy
+      hash: md5
+      md5: f03a7b4fee6d26db61024c5c3f43e672
+      size: 16000
+    - path: artifacts/data_final/valX.npy
+      hash: md5
+      md5: fd1aa5aa75ef655bef35b901a7837853
+      size: 7263488
+    - path: artifacts/data_final/valY.npy
+      hash: md5
+      md5: c7bc3696c4a680f4399b3732c9c82337
+      size: 4784
+    - path: artifacts/data_split/test.csv
+      hash: md5
+      md5: 85d84c060bca035fe636ebb32dd9ae2b
+      size: 138792
+    - path: artifacts/data_split/train.csv
+      hash: md5
+      md5: ea4eac96ac3ecdecff58705db012b388
+      size: 425526
+    - path: artifacts/data_split/val.csv
+      hash: md5
+      md5: ae8c98d8adbc232b3bbd249c61046785
+      size: 138598
+    - path: artifacts/prepare_base_model/full_model.h5
+      hash: md5
+      md5: fd02665227bdb372baa4d7d86e02a1ca
+      size: 2620416
+    - path: config/config.yaml
+      hash: md5
+      md5: 5b7353991c71f94b65e4366fdc3d2193
+      size: 925
+    - path: src/LSTM_BTC_Prediction/pipeline/stage_04_model_training.py
+      hash: md5
+      md5: 47fa0a006af522adba603547458f6d31
+      size: 913
+    params:
+      params.yaml:
+        BATCH_SIZE: 30
+        EPOCHS: 1
+        LEARNING_RATE: 0.001
+        PATIENCE: 10
+    outs:
+    - path: artifacts/training/model.keras
+      hash: md5
+      md5: 5183c0fbfcd9d4aa606a874cf3000847
+      size: 7802767
+    - path: scores.json
+      hash: md5
+      md5: 3096db15990953986bd741775d526444
+      size: 116

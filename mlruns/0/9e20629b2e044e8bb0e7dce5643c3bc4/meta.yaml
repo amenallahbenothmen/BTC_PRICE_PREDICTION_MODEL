@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/9e20629b2e044e8bb0e7dce5643c3bc4/artifacts
+end_time: 1715278229779
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9e20629b2e044e8bb0e7dce5643c3bc4
+run_name: popular-worm-91
+run_uuid: 9e20629b2e044e8bb0e7dce5643c3bc4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715278224915
+status: 3
+tags: []
+user_id: amenm
