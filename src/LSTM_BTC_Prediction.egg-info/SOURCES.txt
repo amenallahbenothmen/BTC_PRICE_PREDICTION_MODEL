@@ -16,6 +16,8 @@ src/LSTM_BTC_Prediction/constants/__init__.py
 src/LSTM_BTC_Prediction/entity/__init__.py
 src/LSTM_BTC_Prediction/entity/config_entity.py
 src/LSTM_BTC_Prediction/pipeline/__init__.py
+src/LSTM_BTC_Prediction/pipeline/predection.py
+src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
 src/LSTM_BTC_Prediction/pipeline/stage_01_data_ingestion.py
 src/LSTM_BTC_Prediction/pipeline/stage_02_data_preprocessing.py
 src/LSTM_BTC_Prediction/pipeline/stage_03_prepare_base_model.py

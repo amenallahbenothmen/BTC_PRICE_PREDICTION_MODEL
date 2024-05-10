@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/4cdd73046ff54755a07dbf2561badf7e/artifacts
+end_time: 1715349557813
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4cdd73046ff54755a07dbf2561badf7e
+run_name: sedate-rat-506
+run_uuid: 4cdd73046ff54755a07dbf2561badf7e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715349553247
+status: 3
+tags: []
+user_id: amenm

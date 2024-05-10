@@ -20,8 +20,8 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             source_URL_Transaction=config.source_URL_Transaction,
             source_URL_blocks=config.source_URL_blocks,
-            dataset_name= config.dataset_name
-
+            dataset_name= config.dataset_name,
+            current_date=self.params.CURRENT_DATE
 
         )
         return data_ingestion_config

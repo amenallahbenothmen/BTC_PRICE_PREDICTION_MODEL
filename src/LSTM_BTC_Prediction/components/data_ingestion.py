@@ -20,8 +20,7 @@ class DataIngestion:
         try:
             symbol = 'BTC-USD'
             start_date = '2014-09-17'
-            now = datetime.now()
-            end_date = now.strftime('%Y-%m-%d')
+            end_date = self.config.current_date
             data = yf.download(symbol, start=start_date, end=end_date)
             df = pd.DataFrame({
                 'DateTime': data.index,
@@ -146,8 +145,7 @@ class DataIngestion:
         try:
             symbol = '^IRX'
             start_date = '2014-09-17'
-            now = datetime.now()
-            end_date = now.strftime('%Y-%m-%d')
+            end_date = self.config.current_date
             interest_rates = yf.download(symbol, start='2014-09-17', end=end_date)
             df = pd.DataFrame({
                 'DateTime': interest_rates.index,
@@ -175,8 +173,7 @@ class DataIngestion:
         try:
             symbol = "^GSPC"
             start_date = '2014-09-17'
-            now = datetime.now()
-            end_date = now.strftime('%Y-%m-%d')
+            end_date = self.config.current_date
             stock_indices = yf.download(symbol, start=start_date, end=end_date)
             df = pd.DataFrame({
                 'DateTime': stock_indices.index,
@@ -212,8 +209,7 @@ class DataIngestion:
         try:
             symbol = 'TIP'
             start_date = '2014-09-17'
-            now = datetime.now()
-            end_date = now.strftime('%Y-%m-%d')
+            end_date = self.config.current_date
             inflation_data = yf.download(symbol, start=start_date, end=end_date)
             df = pd.DataFrame({
                 'DateTime':inflation_data.index,
@@ -242,5 +238,6 @@ class DataIngestion:
         os.makedirs("artifacts/data_ingestion", exist_ok=True)
         file_path = os.path.join(self.config.root_dir, f"{self.config.dataset_name}.csv")
         self.df.to_csv(file_path)
+
 
 

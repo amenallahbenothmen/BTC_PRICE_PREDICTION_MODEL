@@ -7,6 +7,7 @@ class DataIngestionConfig:
     source_URL_Transaction:str
     source_URL_blocks:str
     dataset_name:str
+    current_date:str
     
 @dataclass(frozen=True)
 class DataPreprocessingConfig:

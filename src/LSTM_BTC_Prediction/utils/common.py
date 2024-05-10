@@ -8,6 +8,7 @@ from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
+import datetime
 
 
 
@@ -124,3 +125,21 @@ def get_size(path: Path) -> str:
     size_in_kb = round(os.path.getsize(path)/1024)
     return f"~ {size_in_kb} KB"
 
+@ensure_annotations
+def update_current_date(path_to_yaml: Path):
+    """Update the CURRENT_DATE parameter to the current date."""
+    try:
+        # Lecture du fichier YAML
+        with open(path_to_yaml, 'r') as yaml_file:
+            content = yaml.safe_load(yaml_file)
+
+        # Mise à jour de CURRENT_DATE avec la date actuelle
+        content['CURRENT_DATE'] = datetime.datetime.now().strftime('%Y-%m-%d')
+
+        # Sauvegarde des modifications dans le fichier YAML
+        with open(path_to_yaml, 'w') as yaml_file:
+            yaml.safe_dump(content, yaml_file)
+
+        logger.info(f"CURRENT_DATE updated to {content['CURRENT_DATE']} in {path_to_yaml}")
+    except Exception as e:
+        logger.error(f"Error updating CURRENT_DATE: {e}")
