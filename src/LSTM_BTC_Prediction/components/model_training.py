@@ -90,14 +90,26 @@ class Training:
         test_predictions = self.model.predict(self.testX)
         test_predictions = test_predictions * (max_test - min_test) + min_test
 
+        prediction=test_predictions.reshape(-1,1).flatten()[-self.config.forecast_horizon:]
+
+        self.save_prediction(prediction=prediction)
+        self.save_model_to_dir()
+
         actual_price = self.testY * (max_test - min_test) + min_test
 
         test_rmse = self.calculate_rmse(actual_price, test_predictions)
 
         self.save_score(train_loss, val_loss, test_rmse)
 
-    def log_into_mlflow(self):
+    def save_model_to_dir(self):
+        model=tf.keras.models.load_model(self.config.trained_model_path)
+        model.save(self.config.saved_model_path)
+ 
+    def save_prediction(self,prediction:np.array):
+         np.save(self.config.result_path,prediction)
 
+
+    def log_into_mlflow(self):
         mlflow.set_registry_uri(self.config.mlflow_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
@@ -110,3 +122,4 @@ class Training:
                 mlflow.keras.log_model(self.model, "model", registered_model_name="LSTM_BTC_PREDECTION")
             else:
                 mlflow.keras.log_model(self.model, "model")
+

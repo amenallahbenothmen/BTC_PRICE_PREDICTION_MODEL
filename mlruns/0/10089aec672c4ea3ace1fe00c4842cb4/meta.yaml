@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/10089aec672c4ea3ace1fe00c4842cb4/artifacts
+end_time: 1715361224114
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 10089aec672c4ea3ace1fe00c4842cb4
+run_name: aged-snipe-143
+run_uuid: 10089aec672c4ea3ace1fe00c4842cb4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715361217986
+status: 3
+tags: []
+user_id: amenm

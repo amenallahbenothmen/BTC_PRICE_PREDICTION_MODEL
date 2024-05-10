@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/d7dea67ba6f44c4d9a3c9533cbcc632f/artifacts
+end_time: 1715359996589
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d7dea67ba6f44c4d9a3c9533cbcc632f
+run_name: fun-elk-60
+run_uuid: d7dea67ba6f44c4d9a3c9533cbcc632f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715359990658
+status: 3
+tags: []
+user_id: amenm

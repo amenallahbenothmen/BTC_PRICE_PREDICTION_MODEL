@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/cdbb263542ca45a6906eef06397c4464/artifacts
+end_time: 1715358180046
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cdbb263542ca45a6906eef06397c4464
+run_name: powerful-gnu-73
+run_uuid: cdbb263542ca45a6906eef06397c4464
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715358174952
+status: 3
+tags: []
+user_id: amenm

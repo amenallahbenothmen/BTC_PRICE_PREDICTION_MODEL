@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/92a3895914a946fd99082304cb939db6/artifacts
+end_time: 1715357775177
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 92a3895914a946fd99082304cb939db6
+run_name: enthused-mink-198
+run_uuid: 92a3895914a946fd99082304cb939db6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715357770155
+status: 3
+tags: []
+user_id: amenm

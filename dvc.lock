@@ -1,12 +1,22 @@
 schema: '2.0'
 stages:
+  updating_date:
+    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
+    deps:
+    - path: src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
+      hash: md5
+      md5: e9071a749acec9990f5c82e0c800ffb5
+      size: 977
+    params:
+      params.yaml:
+        CURRENT_DATE: '2024-05-10'
   data_ingestion:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_01_data_ingestion.py
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 5b7353991c71f94b65e4366fdc3d2193
-      size: 925
+      md5: 3dfb1cdefc584fc481b254866d655850
+      size: 1049
     - path: src/LSTM_BTC_Prediction/pipeline/stage_01_data_ingestion.py
       hash: md5
       md5: 8ba21ae6e0f3b407810e62248bcffdea
@@ -30,8 +40,8 @@ stages:
       nfiles: 1
     - path: config/config.yaml
       hash: md5
-      md5: 5b7353991c71f94b65e4366fdc3d2193
-      size: 925
+      md5: 3dfb1cdefc584fc481b254866d655850
+      size: 1049
     - path: src/LSTM_BTC_Prediction/pipeline/stage_02_data_preprocessing.py
       hash: md5
       md5: 113345afaad07dd29374ff8c9203d83f
@@ -98,8 +108,8 @@ stages:
       size: 24772928
     - path: config/config.yaml
       hash: md5
-      md5: 5b7353991c71f94b65e4366fdc3d2193
-      size: 925
+      md5: 3dfb1cdefc584fc481b254866d655850
+      size: 1049
     - path: src/LSTM_BTC_Prediction/pipeline/stage_03_prepare_base_model.py
       hash: md5
       md5: 99daef6f314a448eef844ba1de159d10
@@ -115,7 +125,7 @@ stages:
     outs:
     - path: artifacts/prepare_base_model/full_model.h5
       hash: md5
-      md5: abda21aada4428deb8ee32d914d33209
+      md5: 6367e3395ef9e40109d3947dcaa3e990
       size: 2620416
   model_training:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_04_model_training.py
@@ -158,38 +168,37 @@ stages:
       size: 138598
     - path: artifacts/prepare_base_model/full_model.h5
       hash: md5
-      md5: abda21aada4428deb8ee32d914d33209
+      md5: 6367e3395ef9e40109d3947dcaa3e990
       size: 2620416
     - path: config/config.yaml
       hash: md5
-      md5: 5b7353991c71f94b65e4366fdc3d2193
-      size: 925
+      md5: 3dfb1cdefc584fc481b254866d655850
+      size: 1049
     - path: src/LSTM_BTC_Prediction/pipeline/stage_04_model_training.py
       hash: md5
-      md5: 47fa0a006af522adba603547458f6d31
-      size: 913
+      md5: 698b41398712261635a2f2f54e94a85b
+      size: 915
     params:
       params.yaml:
         BATCH_SIZE: 30
         EPOCHS: 1
+        FORECAST_HORIZON: 1
         LEARNING_RATE: 0.001
         PATIENCE: 10
     outs:
     - path: artifacts/training/model.keras
       hash: md5
-      md5: b0484008ff2f8770468a0c7a934ab970
+      md5: de150d552535abec32ed306cf60854cc
       size: 7802767
+    - path: model/model.keras
+      hash: md5
+      md5: dc518846200566308c711d5c7de0bf8d
+      size: 7802767
+    - path: prediction/result.npy
+      hash: md5
+      md5: 097ee3d56d29368ae87150ee5460cab7
+      size: 132
     - path: scores.json
       hash: md5
-      md5: c6d06edd867fff21991d35bc168f1c32
-      size: 114
-  updating_date:
-    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
-    deps:
-    - path: src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
-      hash: md5
-      md5: e9071a749acec9990f5c82e0c800ffb5
-      size: 977
-    params:
-      params.yaml:
-        CURRENT_DATE: '2024-05-10'
+      md5: ccd8da5dea35084c6fa9873cb9f173a2
+      size: 115

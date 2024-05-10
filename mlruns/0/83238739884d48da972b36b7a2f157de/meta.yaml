@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/83238739884d48da972b36b7a2f157de/artifacts
+end_time: 1715357957139
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 83238739884d48da972b36b7a2f157de
+run_name: resilient-snake-359
+run_uuid: 83238739884d48da972b36b7a2f157de
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715357952459
+status: 3
+tags: []
+user_id: amenm

@@ -52,8 +52,10 @@ stages:
       - DROPOUT_RATE_2
       - L2_REG_1
       - L2_REG_2 
+
     outs:
       - artifacts/prepare_base_model/full_model.h5
+ 
 
   model_training:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_04_model_training.py
@@ -75,8 +77,11 @@ stages:
       - EPOCHS
       - LEARNING_RATE
       - PATIENCE
+      - FORECAST_HORIZON       
     outs:
       - artifacts/training/model.keras
+      - prediction/result.npy  
+      - model/model.keras
     metrics:
       - scores.json:
           cache: false

@@ -32,6 +32,7 @@ class PrepareBaseModelConfig:
     l2_reg_1:float
     l2_reg_2:float
 
+
 @dataclass(frozen=True)
 class TrainingConfig:
     root_dir:Path 
@@ -39,10 +40,15 @@ class TrainingConfig:
     full_model_path :Path
     training_data :Path
     data_dir :Path
+    model_dir:Path
+    saved_model_path:Path
+    prediction_dir:Path
+    result_path:Path
     batch_size : int 
     epochs : int 
     patience : int 
     learning_rate: float 
+    forecast_horizon:int
     all_params : dict 
     mlflow_uri:str
 

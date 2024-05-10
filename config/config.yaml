@@ -36,7 +36,11 @@ prepare_base_model:
 training :
  root_dir: artifacts/training
  trained_model_path: artifacts/training/model.keras
-  
+ model_dir : model
+ saved_model_path: model/model.keras
+ prediction_dir : prediction 
+ result_path: prediction/result.npy
+
 
 
 

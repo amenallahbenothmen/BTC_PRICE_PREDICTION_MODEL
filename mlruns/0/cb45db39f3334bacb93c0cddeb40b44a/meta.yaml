@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/cb45db39f3334bacb93c0cddeb40b44a/artifacts
+end_time: 1715358644951
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cb45db39f3334bacb93c0cddeb40b44a
+run_name: invincible-newt-525
+run_uuid: cb45db39f3334bacb93c0cddeb40b44a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715358639445
+status: 3
+tags: []
+user_id: amenm

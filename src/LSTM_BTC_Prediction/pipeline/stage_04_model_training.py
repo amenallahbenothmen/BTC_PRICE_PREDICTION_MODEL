@@ -17,6 +17,7 @@ class ModelTrainingPipeline:
      training.train()
      training.log_into_mlflow()
 
+
  
 
 if __name__ == '__main__':

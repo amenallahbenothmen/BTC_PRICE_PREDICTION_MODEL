@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/fd11dcfcc06948ec8a6390dcdad940a0/artifacts
+end_time: 1715360998867
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd11dcfcc06948ec8a6390dcdad940a0
+run_name: useful-rook-247
+run_uuid: fd11dcfcc06948ec8a6390dcdad940a0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715360992889
+status: 3
+tags: []
+user_id: amenm

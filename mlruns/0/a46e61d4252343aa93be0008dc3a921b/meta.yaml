@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/a46e61d4252343aa93be0008dc3a921b/artifacts
+end_time: 1715358822149
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a46e61d4252343aa93be0008dc3a921b
+run_name: crawling-squid-499
+run_uuid: a46e61d4252343aa93be0008dc3a921b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715358817544
+status: 3
+tags: []
+user_id: amenm
