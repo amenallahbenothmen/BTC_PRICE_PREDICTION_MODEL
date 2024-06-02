@@ -23,20 +23,20 @@ stages:
       size: 1120
     params:
       params.yaml:
-        CURRENT_DATE: '2024-05-10'
+        CURRENT_DATE: '2024-06-02'
     outs:
     - path: artifacts/data_ingestion
       hash: md5
-      md5: c336719c7a62d4ebded24a80c2fcd2fb.dir
-      size: 1549530
+      md5: 8658fc4153931cc8e37029712b3fa538.dir
+      size: 1558988
       nfiles: 1
   data_preprocessing:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_02_data_preprocessing.py
     deps:
     - path: artifacts/data_ingestion
       hash: md5
-      md5: c336719c7a62d4ebded24a80c2fcd2fb.dir
-      size: 1549530
+      md5: 8658fc4153931cc8e37029712b3fa538.dir
+      size: 1558988
       nfiles: 1
     - path: config/config.yaml
       hash: md5
@@ -53,59 +53,59 @@ stages:
     outs:
     - path: artifacts/data_final/testX.npy
       hash: md5
-      md5: 1e511816a0e378443ecb2e338b9f78c9
-      size: 7263488
+      md5: 45e9a428210554dbedb2ba836a699228
+      size: 7325888
     - path: artifacts/data_final/testY.npy
       hash: md5
-      md5: 480daec2df151f11a72a650cf12e338f
-      size: 4784
+      md5: c9ad211fec8e766211951159379e941a
+      size: 4824
     - path: artifacts/data_final/trainX.npy
       hash: md5
-      md5: d6d4d020fa74a7261f4c513697a62ad2
-      size: 24772928
+      md5: 84786f821bfa8b8299c1f6c7f8d23676
+      size: 24947648
     - path: artifacts/data_final/trainY.npy
       hash: md5
-      md5: 6ef0f7711022b7347e49fbca4b53f835
-      size: 16008
+      md5: ce73339b1bccca3db35a6fbf88d1ffdd
+      size: 16120
     - path: artifacts/data_final/valX.npy
       hash: md5
-      md5: e7e0c3a7e867e7224fbe34ee2e393d5b
-      size: 7263488
+      md5: 7bcfcf86ba2f9d3360ff2e3ccd017df9
+      size: 7313408
     - path: artifacts/data_final/valY.npy
       hash: md5
-      md5: 3d9dfd06d8e1cb0fd7c66c409c69a542
-      size: 4784
+      md5: ab8b15ddb5a96bf13ece5f9fb611fca6
+      size: 4816
     - path: artifacts/data_scaled/test_scaled.csv
       hash: md5
-      md5: e99d7c6ef5d0f340bef83d17e04dc149
-      size: 176480
+      md5: d69773b6f0ec23c155d02177ccc456f0
+      size: 177626
     - path: artifacts/data_scaled/train_scaled.csv
       hash: md5
-      md5: 925199c0a27d11702a65e09ccbed5d6b
-      size: 545415
+      md5: 6833a63513c63d42a5bdaf6d6b214041
+      size: 549028
     - path: artifacts/data_scaled/val_scaled.csv
       hash: md5
-      md5: 60c077b039d2bf9e49493c16d2c2eb90
-      size: 178832
+      md5: 636e9cfaf5c8748aabb5bda503fb92b4
+      size: 179855
     - path: artifacts/data_split/test.csv
       hash: md5
-      md5: 896b40e66d43a023361e33c2215ad813
-      size: 138788
+      md5: ca88126cb0abe1f340c116d04033c0d9
+      size: 139589
     - path: artifacts/data_split/train.csv
       hash: md5
-      md5: b4b95f949f96d5b99dfd453d093952fc
-      size: 425727
+      md5: c658eb7ac562387826d2f9da917419b2
+      size: 428491
     - path: artifacts/data_split/val.csv
       hash: md5
-      md5: 9570e90c3daea75715dee8f63a156acc
-      size: 138598
+      md5: 0cde3d5fcdbd90b914ca9e2f533cb670
+      size: 139463
   prepare_base_model:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_03_prepare_base_model.py
     deps:
     - path: artifacts/data_final/trainX.npy
       hash: md5
-      md5: d6d4d020fa74a7261f4c513697a62ad2
-      size: 24772928
+      md5: 84786f821bfa8b8299c1f6c7f8d23676
+      size: 24947648
     - path: config/config.yaml
       hash: md5
       md5: 3dfb1cdefc584fc481b254866d655850
@@ -120,56 +120,56 @@ stages:
         DROPOUT_RATE_2: 0.1
         L2_REG_1: 0.001
         L2_REG_2: 0.001
-        LSTM_UNITS_1: 156
-        LSTM_UNITS_2: 124
+        LSTM_UNITS_1: 356
+        LSTM_UNITS_2: 256
     outs:
     - path: artifacts/prepare_base_model/full_model.h5
       hash: md5
-      md5: 6367e3395ef9e40109d3947dcaa3e990
-      size: 2620416
+      md5: 8af4f3dd31bc685acde8314d8c540bca
+      size: 12192768
   model_training:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_04_model_training.py
     deps:
     - path: artifacts/data_final/testX.npy
       hash: md5
-      md5: 1e511816a0e378443ecb2e338b9f78c9
-      size: 7263488
+      md5: 45e9a428210554dbedb2ba836a699228
+      size: 7325888
     - path: artifacts/data_final/testY.npy
       hash: md5
-      md5: 480daec2df151f11a72a650cf12e338f
-      size: 4784
+      md5: c9ad211fec8e766211951159379e941a
+      size: 4824
     - path: artifacts/data_final/trainX.npy
       hash: md5
-      md5: d6d4d020fa74a7261f4c513697a62ad2
-      size: 24772928
+      md5: 84786f821bfa8b8299c1f6c7f8d23676
+      size: 24947648
     - path: artifacts/data_final/trainY.npy
       hash: md5
-      md5: 6ef0f7711022b7347e49fbca4b53f835
-      size: 16008
+      md5: ce73339b1bccca3db35a6fbf88d1ffdd
+      size: 16120
     - path: artifacts/data_final/valX.npy
       hash: md5
-      md5: e7e0c3a7e867e7224fbe34ee2e393d5b
-      size: 7263488
+      md5: 7bcfcf86ba2f9d3360ff2e3ccd017df9
+      size: 7313408
     - path: artifacts/data_final/valY.npy
       hash: md5
-      md5: 3d9dfd06d8e1cb0fd7c66c409c69a542
-      size: 4784
+      md5: ab8b15ddb5a96bf13ece5f9fb611fca6
+      size: 4816
     - path: artifacts/data_split/test.csv
       hash: md5
-      md5: 896b40e66d43a023361e33c2215ad813
-      size: 138788
+      md5: ca88126cb0abe1f340c116d04033c0d9
+      size: 139589
     - path: artifacts/data_split/train.csv
       hash: md5
-      md5: b4b95f949f96d5b99dfd453d093952fc
-      size: 425727
+      md5: c658eb7ac562387826d2f9da917419b2
+      size: 428491
     - path: artifacts/data_split/val.csv
       hash: md5
-      md5: 9570e90c3daea75715dee8f63a156acc
-      size: 138598
+      md5: 0cde3d5fcdbd90b914ca9e2f533cb670
+      size: 139463
     - path: artifacts/prepare_base_model/full_model.h5
       hash: md5
-      md5: 6367e3395ef9e40109d3947dcaa3e990
-      size: 2620416
+      md5: 8af4f3dd31bc685acde8314d8c540bca
+      size: 12192768
     - path: config/config.yaml
       hash: md5
       md5: 3dfb1cdefc584fc481b254866d655850
@@ -181,24 +181,24 @@ stages:
     params:
       params.yaml:
         BATCH_SIZE: 30
-        EPOCHS: 1
+        EPOCHS: 100
         FORECAST_HORIZON: 1
         LEARNING_RATE: 0.001
         PATIENCE: 10
     outs:
     - path: artifacts/training/model.keras
       hash: md5
-      md5: de150d552535abec32ed306cf60854cc
-      size: 7802767
+      md5: c762b2c1f029abb103622535d85f0b98
+      size: 36517231
     - path: model/model.keras
       hash: md5
-      md5: dc518846200566308c711d5c7de0bf8d
-      size: 7802767
+      md5: 795b1df8b8bed27dcd54e4bfc6522293
+      size: 36517231
     - path: prediction/result.npy
       hash: md5
-      md5: 097ee3d56d29368ae87150ee5460cab7
+      md5: 8324d0ae4815f27779edbc73e89bef51
       size: 132
     - path: scores.json
       hash: md5
-      md5: ccd8da5dea35084c6fa9873cb9f173a2
+      md5: 118926ff552760ddccf4296bb7a4034e
       size: 115

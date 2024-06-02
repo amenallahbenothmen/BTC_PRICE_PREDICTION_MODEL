@@ -1,11 +1,4 @@
 stages:
-  updating_date:
-    cmd: python src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
-    deps:
-      - src/LSTM_BTC_Prediction/pipeline/stage_00_date_updating.py
-    params:
-      - CURRENT_DATE         
-
   data_ingestion:
     cmd: python src/LSTM_BTC_Prediction/pipeline/stage_01_data_ingestion.py
     deps: 

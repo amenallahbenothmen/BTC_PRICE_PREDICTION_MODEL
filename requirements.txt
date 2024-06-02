@@ -20,6 +20,7 @@ joblib
 types-PyYAML
 scipy
 Flask
+stramlit
 Flask-Cors
 python-box
 typing

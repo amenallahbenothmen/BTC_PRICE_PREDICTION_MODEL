@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/719a094122db44a5a8f652c111be8ad0/artifacts
+end_time: 1717335719816
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 719a094122db44a5a8f652c111be8ad0
+run_name: powerful-hound-566
+run_uuid: 719a094122db44a5a8f652c111be8ad0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717335711678
+status: 3
+tags: []
+user_id: amenm

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/b3a515f7148346678d466a1a925c4e58/artifacts
+end_time: 1717330801313
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b3a515f7148346678d466a1a925c4e58
+run_name: likeable-hen-365
+run_uuid: b3a515f7148346678d466a1a925c4e58
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717330795631
+status: 3
+tags: []
+user_id: amenm

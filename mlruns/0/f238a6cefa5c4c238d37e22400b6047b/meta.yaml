@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/amenm/OneDrive/Desktop/p2m_final/BTC_PRICE_PREDICTION-main/BTC_PRICE_PREDICTION-main/mlruns/0/f238a6cefa5c4c238d37e22400b6047b/artifacts
+end_time: 1717329690908
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f238a6cefa5c4c238d37e22400b6047b
+run_name: invincible-eel-389
+run_uuid: f238a6cefa5c4c238d37e22400b6047b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717329668079
+status: 3
+tags: []
+user_id: amenm
