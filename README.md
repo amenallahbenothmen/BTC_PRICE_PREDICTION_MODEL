@@ -1,4 +1,4 @@
-#BTC Price Prediction Model
+
 
 ## Project Overview
 
